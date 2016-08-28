@@ -7,7 +7,7 @@ var CreateUser = React.createClass({
                 <form>
                     <input onChange={this.props.getFirst} placeholder="firstname..."/>
                     <input onChange={this.props.getLast} placeholder="lastname..."/>
-                    <input onChange={this.props.getContact} placeholder="phone number or email"/>
+                    <input onChange={this.props.getContact} placeholder="phone number or email..."/>
                     <label>Blood Group</label>
                     <select>
                         <option>A</option>

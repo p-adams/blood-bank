@@ -37,7 +37,7 @@ var BloodBankApp = React.createClass({
   render() {
     console.log(this.state.isUser)
     return (
-      <div className="App">
+      <div className="container">
       {!this.state.isUser ? 
         <CreateUser
             storeUser={this.storeUser}

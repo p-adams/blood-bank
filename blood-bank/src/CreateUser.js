@@ -1,25 +1,41 @@
 import React from 'react'
+import './index.js'
 
 var CreateUser = React.createClass({
     render: function(){
         return(
-            <div className="create-user">
+            <div className="container">
                 <form>
-                    <input onChange={this.props.getFirst} placeholder="firstname..."/>
-                    <input onChange={this.props.getLast} placeholder="lastname..."/>
-                    <input onChange={this.props.getContact} placeholder="phone number or email..."/>
+                <span>Already a user? <a href="#" onClick={this.props.login}>Login</a></span><br/>
+                <div className="form-group">
+                    <label for="firstname">Firstname: </label>
+                    <input className="form-control" onChange={this.props.getFirst} placeholder="firstname..."/>
+                </div>
+                <div className="form-group">
+                    <label for="lastname">Lastname: </label>
+                    <input className="form-control" onChange={this.props.getLast} placeholder="lastname..."/>
+                </div>
+                <div className="form-group">
+                    <label for="lastname">Preferred contact information: </label>    
+                    <input className="form-control" onChange={this.props.getContact} placeholder="phone number or email..."/>
+                </div>
+                <div className="form-group">
                     <label>Blood Group</label>
-                    <select>
+                    <select className="form-control">
                         <option>A</option>
                         <option>B</option>
                         <option>AB</option>
                         <option>O</option>
                     </select>
-                    <label>RH Factor</label>
-                     <input type="radio" name="rh-factor" value="negative"/>Negative<br/>
-                     <input type="radio" name="rh-factor" value="positive"/>Positive<br/>
-                    <span>Already a user? <a href="#" onClick={this.props.login}>Login</a></span>
-                    <button onClick={this.props.storeUser}>Create User</button>
+                </div>
+                <label>RH factor: </label><br/>
+                <label className="radio-inline">
+                <input  type="radio" name="optradio"/>Negative
+                </label>
+                <label className="radio-inline">
+                <input type="radio" name="optradio"/>Positive
+                </label>
+                <button id="storeUser" className="btn btn-default" onClick={this.props.storeUser}>Create User</button>
                 </form>
             </div>
         )

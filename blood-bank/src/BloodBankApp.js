@@ -8,7 +8,8 @@ var BloodBankApp = React.createClass({
       firstname: '',
       lastname: '',
       fullname: '',
-      isUser: false
+      isUser: false,
+      showMainPage: false
     })
   },
   getFirst: function(e){
@@ -24,10 +25,18 @@ var BloodBankApp = React.createClass({
   storeUser: function(e){
     e.preventDefault()
     var fullname = this.state.firstname +" "+ this.state.lastname
-    this.setState({fullname: fullname, firstname: '', lastname: ''})
+    this.setState({
+      fullname: fullname,
+      firstname: '', 
+      lastname: '',
+      showMainPage: true
+      })
   },
   login: function(){
-    this.setState({isUser: !this.state.isUser})
+    this.setState({isUser: false, showMainPage: true});
+  },
+  alreadyUser: function(){
+    this.setState({isUser: true})
   },
   createUser: function(){
     this.setState({
@@ -38,18 +47,23 @@ var BloodBankApp = React.createClass({
     console.log(this.state.isUser)
     return (
       <div className="container">
-      {!this.state.isUser ? 
+      {!this.state.isUser && !this.state.showMainPage ? 
         <CreateUser
             storeUser={this.storeUser}
             getFirst={this.getFirst}
             getLast={this.getLast}
-            login={this.login}
+            alreadyUser={this.alreadyUser}
             />
 
-      : <Login 
+      : null}
+
+      {this.state.isUser && !this.state.showMainPage ? <Login 
           createUser={this.createUser}
-      />
-      }
+          login={this.login}
+      /> : null}
+
+      {this.state.showMainPage ? <h2>Main Page from login</h2> : null}
+
       </div>
     );
   }

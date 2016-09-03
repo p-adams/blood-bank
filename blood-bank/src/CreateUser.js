@@ -6,17 +6,17 @@ var CreateUser = React.createClass({
         return(
             <div className="container">
                 <form>
-                <span>Already a user? <a href="#" onClick={this.props.login}>Login</a></span><br/>
+                <span>Already a user? <a href="#" onClick={this.props.alreadyUser}>Login</a></span><br/>
                 <div className="form-group">
-                    <label for="firstname">Firstname: </label>
+                    <label htmlFor="firstname">Firstname: </label>
                     <input className="form-control" onChange={this.props.getFirst} placeholder="firstname..."/>
                 </div>
                 <div className="form-group">
-                    <label for="lastname">Lastname: </label>
+                    <label htmlFor="lastname">Lastname: </label>
                     <input className="form-control" onChange={this.props.getLast} placeholder="lastname..."/>
                 </div>
                 <div className="form-group">
-                    <label for="lastname">Preferred contact information: </label>    
+                    <label htmlFor="lastname">Preferred contact information: </label>    
                     <input className="form-control" onChange={this.props.getContact} placeholder="phone number or email..."/>
                 </div>
                 <div className="form-group">

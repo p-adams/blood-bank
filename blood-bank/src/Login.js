@@ -7,14 +7,14 @@ var Login = React.createClass({
                 <form>
                  <span>Not a user? <a href="#" onClick={this.props.createUser}>Create Account</a></span>
                     <div className="form-group">
-                        <label for="username">Username:</label>
+                        <label htmlFor="username">Username:</label>
                         <input type="text" className="form-control" placeholder="username..."/>
                     </div>   
                     <div className="form-group">
-                        <label for="password">Password: </label>
+                        <label htmlFor="password">Password: </label>
                         <input type="password" className="form-control" placeholder="password..."/>
                     </div>
-                    <button className="btn btn-primary">Login</button>
+                    <button className="btn btn-primary" onClick={this.props.login}>Login</button>
                 </form>
             </div>
         )

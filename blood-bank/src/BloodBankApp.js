@@ -1,6 +1,7 @@
 import React from 'react'
 import CreateUser from './CreateUser'
 import Login from './Login'
+import MainPage from './MainPage'
 
 var BloodBankApp = React.createClass({
   getInitialState: function(){
@@ -62,7 +63,7 @@ var BloodBankApp = React.createClass({
           login={this.login}
       /> : null}
 
-      {this.state.showMainPage ? <h2>Main Page from login</h2> : null}
+      {this.state.showMainPage ? <MainPage/> : null}
 
       </div>
     );

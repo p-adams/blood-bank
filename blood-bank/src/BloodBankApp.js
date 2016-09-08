@@ -9,6 +9,7 @@ var BloodBankApp = React.createClass({
       firstname: '',
       lastname: '',
       fullname: '',
+      meow: "Meow",
       isUser: false,
       showMainPage: false
     })
@@ -23,34 +24,37 @@ var BloodBankApp = React.createClass({
       lastname: e.target.value
     })
   },
-  storeUser: function(e){
+  storeUserInfo: function(e){
     e.preventDefault()
     var fullname = this.state.firstname +" "+ this.state.lastname
+    alert(fullname)
     this.setState({
       fullname: fullname,
-      firstname: '', 
-      lastname: '',
+      firstname: this.state.firstname, 
+      lastname: this.state.lastname,
       showMainPage: true
       })
   },
   login: function(){
     this.setState({isUser: false, showMainPage: true});
   },
+  //page loads, allow for user to click login if account exists.
   alreadyUser: function(){
     this.setState({isUser: true})
   },
-  createUser: function(){
+  //if user goes to login and realized they are not registered user.
+  notUser: function(){
     this.setState({
       isUser: false
     })
   },
   render() {
-    console.log(this.state.isUser)
+   
     return (
       <div className="container">
       {!this.state.isUser && !this.state.showMainPage ? 
         <CreateUser
-            storeUser={this.storeUser}
+            storeUserInfo={this.storeUser}
             getFirst={this.getFirst}
             getLast={this.getLast}
             alreadyUser={this.alreadyUser}
@@ -59,11 +63,11 @@ var BloodBankApp = React.createClass({
       : null}
 
       {this.state.isUser && !this.state.showMainPage ? <Login 
-          createUser={this.createUser}
+          notUser={this.notUser}
           login={this.login}
       /> : null}
 
-      {this.state.showMainPage ? <MainPage/> : null}
+      {this.state.showMainPage ? <MainPage meow={this.state.meow} firstName={this.state.firstname}/> : null}
 
       </div>
     );

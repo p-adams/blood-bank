@@ -68,7 +68,7 @@ var BloodBankApp = React.createClass({
           login={this.login}
       /> : null}
 
-      {this.state.showMainPage ? <MainPage meow={this.state.meow} firstName={this.state.firstname}/> : null}
+      {this.state.showMainPage ? <MainPage donor ={this.props.donor} meow={this.state.meow} firstName={this.state.firstname}/> : null}
 
       </div>
     );

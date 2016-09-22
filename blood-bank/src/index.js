@@ -8,6 +8,6 @@ const DONOR = [
 ]
 
 ReactDOM.render(
-  <BloodBankApp donorInfo={DONOR}/>,
+  <BloodBankApp donor={DONOR}/>,
   document.getElementById('root')
 );

@@ -4,7 +4,7 @@ import BloodBankApp from './BloodBankApp';
 import './index.css';
 
 const DONOR = [
-  {firstname: "John", lastname: "Smith", contact: 7777777, type: '', rh: ''}
+  {firstname: "John", lastname: "Smith", contact: 7777777, type: 'O', rh: 'Positive'}
 ]
 
 ReactDOM.render(

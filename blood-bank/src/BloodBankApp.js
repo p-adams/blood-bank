@@ -2,6 +2,7 @@ import React from 'react'
 import CreateUser from './CreateUser'
 import Login from './Login'
 import MainPage from './MainPage'
+import Index from './Index'
 
 var BloodBankApp = React.createClass({
   getInitialState: function(){

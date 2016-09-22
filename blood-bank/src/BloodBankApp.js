@@ -43,7 +43,7 @@ var BloodBankApp = React.createClass({
   alreadyUser: function(){
     this.setState({isUser: true})
   },
-  //if user goes to login and realized they are not registered user.
+  //if user goes to login and realizes they are not registered user.
   notUser: function(){
     this.setState({
       isUser: false

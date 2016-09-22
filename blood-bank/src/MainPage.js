@@ -8,6 +8,8 @@ var MainPage = React.createClass({
                     <li>{d.firstname}</li>
                     <li>{d.lastname}</li>
                     <li>{d.contact}</li>
+                    <li>{d.type}</li>
+                    <li>{d.rh}</li>
                 </ul>
             )
         })

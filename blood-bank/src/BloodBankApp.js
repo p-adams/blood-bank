@@ -30,7 +30,7 @@ var BloodBankApp = React.createClass({
     //var fullname = this.state.firstname +" "+ this.state.lastname
     //alert(fullname)
     this.setState({
-      fullname: fullname,
+      //fullname: fullname,
       firstname: this.state.firstname, 
       lastname: this.state.lastname,
       showMainPage: true
@@ -62,13 +62,13 @@ var BloodBankApp = React.createClass({
             getFirst={this.getFirst}
             getLast={this.getLast}
             alreadyUser={this.alreadyUser}
-            createAccount={this.notUser}
             />
 
       : null}
 
-      {this.state.isUser && !this.state.showMainPage ? <Login 
-          notUser={this.notUser}
+      {this.state.isUser && !this.state.showMainPage ?
+        <Login 
+          createAccount={this.notUser}
           login={this.login}
       /> : null}
 

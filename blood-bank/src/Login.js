@@ -5,7 +5,7 @@ var Login = React.createClass({
         return(
             <div className="container">
                 <form>
-                 <span>Not a user? <a href="#" onClick={this.props.createUser}>Create Account</a></span>
+                 <span>Not a user? <a href="#" onClick={this.props.createAccount}>Create Account</a></span>
                     <div className="form-group">
                         <label htmlFor="username">Username:</label>
                         <input type="text" className="form-control" placeholder="username..."/>

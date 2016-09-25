@@ -2,7 +2,7 @@ import React from 'react'
 import CreateUser from './CreateUser'
 import Login from './Login'
 import MainPage from './MainPage'
-import Index from './Index'
+//import Index from './index'
 
 var BloodBankApp = React.createClass({
   getInitialState: function(){
@@ -27,8 +27,8 @@ var BloodBankApp = React.createClass({
   },
   storeUserInfo: function(e){
     e.preventDefault()
-    var fullname = this.state.firstname +" "+ this.state.lastname
-    alert(fullname)
+    //var fullname = this.state.firstname +" "+ this.state.lastname
+    //alert(fullname)
     this.setState({
       fullname: fullname,
       firstname: this.state.firstname, 
@@ -37,7 +37,9 @@ var BloodBankApp = React.createClass({
       })
   },
   login: function(){
-    this.setState({isUser: false, showMainPage: true});
+    this.setState({
+      isUser: false,
+      showMainPage: true});
   },
   //page loads, allow for user to click login if account exists.
   alreadyUser: function(){
@@ -45,6 +47,7 @@ var BloodBankApp = React.createClass({
   },
   //if user goes to login and realizes they are not registered user.
   notUser: function(){
+    alert('meow')
     this.setState({
       isUser: false
     })
@@ -59,6 +62,7 @@ var BloodBankApp = React.createClass({
             getFirst={this.getFirst}
             getLast={this.getLast}
             alreadyUser={this.alreadyUser}
+            createAccount={this.notUser}
             />
 
       : null}
@@ -68,7 +72,11 @@ var BloodBankApp = React.createClass({
           login={this.login}
       /> : null}
 
-      {this.state.showMainPage ? <MainPage donor ={this.props.donor} meow={this.state.meow} firstName={this.state.firstname}/> : null}
+      {this.state.showMainPage ?
+        <MainPage donor={this.props.donor}
+                  meow={this.state.meow}
+                  firstName={this.state.firstname}
+                  /> : null}
 
       </div>
     );

@@ -2,7 +2,6 @@ import React from 'react'
 import CreateUser from './CreateUser'
 import Login from './Login'
 import MainPage from './MainPage'
-//import Index from './index'
 
 var BloodBankApp = React.createClass({
   getInitialState: function(){
@@ -10,6 +9,7 @@ var BloodBankApp = React.createClass({
       firstname: '',
       lastname: '',
       fullname: '',
+      contact: '',
       bloodType: 'A',
       rhFactor: 'neg',
       isUser: false,
@@ -24,6 +24,11 @@ var BloodBankApp = React.createClass({
   getLast: function(e){
     this.setState({
       lastname: e.target.value
+    })
+  },
+  getContact: function(e){
+    this.setState({
+      contact: e.target.value
     })
   },
   getType: function(e){
@@ -44,6 +49,9 @@ var BloodBankApp = React.createClass({
       //fullname: fullname,
       firstname: this.state.firstname, 
       lastname: this.state.lastname,
+      contact: this.state.contact,
+      bloodType: this.state.bloodType,
+      rhFactor: this.state.rhFactor,
       showMainPage: true
       })
   },
@@ -69,9 +77,10 @@ var BloodBankApp = React.createClass({
       <div className="container">
       {!this.state.isUser && !this.state.showMainPage ? 
         <CreateUser
-            storeUserInfo={this.storeUser}
+            storeUserInfo={this.storeUserInfo}
             getFirst={this.getFirst}
             getLast={this.getLast}
+            getContact={this.getContact}
             getType={this.getType}
             getRh={this.getRh}
             bloodType={this.state.bloodType}

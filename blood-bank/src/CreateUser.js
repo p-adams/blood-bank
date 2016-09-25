@@ -21,6 +21,7 @@ var CreateUser = React.createClass({
                 </div>
                 <div className="form-group">
                     <label>Blood Group</label>
+                    {this.props.bloodType}
                     <select className="form-control" onChange={this.props.getType}>
                         <option>A</option>
                         <option>B</option>

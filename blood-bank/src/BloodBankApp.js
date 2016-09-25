@@ -12,6 +12,7 @@ var BloodBankApp = React.createClass({
       contact: '',
       bloodType: 'A',
       rhFactor: 'neg',
+      newDonor: [],
       isUser: false,
       showMainPage: false
     })
@@ -43,15 +44,15 @@ var BloodBankApp = React.createClass({
   },
   storeUserInfo: function(e){
     e.preventDefault()
-    //var fullname = this.state.firstname +" "+ this.state.lastname
-    //alert(fullname)
-    this.setState({
-      //fullname: fullname,
-      firstname: this.state.firstname, 
+    this.props.donor.push({
+      firstname: this.state.firstname,
       lastname: this.state.lastname,
       contact: this.state.contact,
-      bloodType: this.state.bloodType,
-      rhFactor: this.state.rhFactor,
+      type: this.state.bloodType,
+      rh: this.state.rhFactor
+    })
+    this.setState({
+      newDonor: this.props.donor,
       showMainPage: true
       })
   },

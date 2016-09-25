@@ -21,7 +21,8 @@ var CreateUser = React.createClass({
                 </div>
                 <div className="form-group">
                     <label>Blood Group</label>
-                    <select className="form-control">
+                    {this.props.bloodType}
+                    <select className="form-control" onChange={this.props.getType}>
                         <option>A</option>
                         <option>B</option>
                         <option>AB</option>
@@ -29,11 +30,12 @@ var CreateUser = React.createClass({
                     </select>
                 </div>
                 <label>RH factor: </label><br/>
+                {this.props.rhFactor}
                 <label className="radio-inline">
-                <input  type="radio" name="optradio"/>Negative
+                <input  type="radio" onChange={this.props.getRh} checked={this.props.rhFactor==='neg'} value="neg" name="optradio"/>Negative
                 </label>
                 <label className="radio-inline">
-                <input type="radio" name="optradio"/>Positive
+                <input type="radio" onChange={this.props.getRh} checked={this.props.rhFactor==='pos'} value="pos" name="optradio"/>Positive
                 </label>
                 <button id="storeUser" className="btn btn-default" onClick={this.props.storeUser}>Create User</button>
                 </form>

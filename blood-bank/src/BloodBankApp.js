@@ -10,7 +10,8 @@ var BloodBankApp = React.createClass({
       firstname: '',
       lastname: '',
       fullname: '',
-      meow: "Meow",
+      bloodType: 'A',
+      rhFactor: 'neg',
       isUser: false,
       showMainPage: false
     })
@@ -23,6 +24,16 @@ var BloodBankApp = React.createClass({
   getLast: function(e){
     this.setState({
       lastname: e.target.value
+    })
+  },
+  getType: function(e){
+    this.setState({
+      bloodType: e.target.value
+    })
+  },
+  getRh: function(e){
+    this.setState({
+      rhFactor: e.target.value
     })
   },
   storeUserInfo: function(e){
@@ -61,6 +72,10 @@ var BloodBankApp = React.createClass({
             storeUserInfo={this.storeUser}
             getFirst={this.getFirst}
             getLast={this.getLast}
+            getType={this.getType}
+            getRh={this.getRh}
+            bloodType={this.state.bloodType}
+            rhFactor={this.state.rhFactor}
             alreadyUser={this.alreadyUser}
             />
 
@@ -74,7 +89,6 @@ var BloodBankApp = React.createClass({
 
       {this.state.showMainPage ?
         <MainPage donor={this.props.donor}
-                  meow={this.state.meow}
                   firstName={this.state.firstname}
                   /> : null}
 

@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import BloodBankApp from './BloodBankApp';
+import store from './store'
 import './index.css';
+
+
 
 const DONOR = [
   {firstname: "John", lastname: "Smith", contact: 7777777, type: 'O', rh: 'Positive'},

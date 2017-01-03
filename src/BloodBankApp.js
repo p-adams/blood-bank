@@ -1,82 +1,16 @@
-import React from 'react'
+import React, {Component} from 'react'
+import {observer} from 'mobx-react'
 import CreateUser from './CreateUser'
 import Login from './Login'
 import MainPage from './MainPage'
 
-var BloodBankApp = React.createClass({
-  getInitialState: function(){
-    return({
-      firstname: '',
-      lastname: '',
-      fullname: '',
-      contact: '',
-      bloodType: 'A',
-      rhFactor: 'neg',
-      newDonor: [],
-      isUser: false,
-      showMainPage: false
-    })
-  },
-  getFirst: function(e){
-    this.setState({
-      firstname: e.target.value
-    })
-  },
-  getLast: function(e){
-    this.setState({
-      lastname: e.target.value
-    })
-  },
-  getContact: function(e){
-    this.setState({
-      contact: e.target.value
-    })
-  },
-  getType: function(e){
-    this.setState({
-      bloodType: e.target.value
-    })
-  },
-  getRh: function(e){
-    this.setState({
-      rhFactor: e.target.value
-    })
-  },
-  storeUserInfo: function(e){
-    e.preventDefault()
-    this.props.donor.push({
-      firstname: this.state.firstname,
-      lastname: this.state.lastname,
-      contact: this.state.contact,
-      type: this.state.bloodType,
-      rh: this.state.rhFactor
-    })
-    this.setState({
-      newDonor: this.props.donor,
-      showMainPage: true
-      })
-  },
-  login: function(){
-    this.setState({
-      isUser: false,
-      showMainPage: true});
-  },
-  //page loads, allow for user to click login if account exists.
-  alreadyUser: function(){
-    this.setState({isUser: true})
-  },
-  //if user goes to login and realizes they are not registered user.
-  notUser: function(){
-    alert('meow')
-    this.setState({
-      isUser: false
-    })
-  },
+
+@observer
+class BloodBankApp extends Component{
   render() {
-   
     return (
       <div className="container">
-      {!this.state.isUser && !this.state.showMainPage ? 
+      {!this.state.isUser && !this.state.showMainPage ?
         <CreateUser
             storeUserInfo={this.storeUserInfo}
             getFirst={this.getFirst}
@@ -92,7 +26,7 @@ var BloodBankApp = React.createClass({
       : null}
 
       {this.state.isUser && !this.state.showMainPage ?
-        <Login 
+        <Login
           createAccount={this.notUser}
           login={this.login}
       /> : null}
@@ -105,6 +39,6 @@ var BloodBankApp = React.createClass({
       </div>
     );
   }
-})
+}
 
 export default BloodBankApp;

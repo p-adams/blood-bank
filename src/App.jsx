@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
-import { observer } from 'mobx-react';
-import DevTools from 'mobx-react-devtools';
+import React, { Component } from 'react'
+import { observer } from 'mobx-react'
+import DevTools from 'mobx-react-devtools'
+import BloodBank from './BloodBankApp'
 
 @observer
 class App extends Component {
   render() {
     return (
       <div>
-        {this.props.appState.name}
-        <button onClick={this.onReset}>
-          Seconds passed: {this.props.appState.timer}
-        </button>
+        <BloodBank></BloodBank>
         <DevTools />
       </div>
     );
-  }
-
-  onReset = () => {
-    this.props.appState.resetTimer();
   }
 };
 

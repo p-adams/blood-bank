@@ -1,4 +1,4 @@
-import {React, Component} from 'react'
+import React, {Component} from 'react'
 
 class MainPage extends Component {
     render(){
@@ -17,7 +17,7 @@ class MainPage extends Component {
         return(
             <div className="main-page">
                 <h1>Blood Bank Management</h1><hr/>
-                <h4>Firstname: </h4>
+                <h4>Firstname: from login</h4>
                 {donorInfo}
             </div>
         )

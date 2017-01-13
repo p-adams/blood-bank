@@ -9,7 +9,7 @@ import MainPage from './MainPage'
 class BloodBankApp extends Component{
   render() {
     const store = this.props.store
-    console.log{`store: ${store}`}
+    console.log(`store: ${store}`)
     return (
       <div className="container">
       {/*<CreateUser/>

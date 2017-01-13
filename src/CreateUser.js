@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.js'
+
 
 var CreateUser = React.createClass({
     render: function(){
@@ -16,7 +16,7 @@ var CreateUser = React.createClass({
                     <input className="form-control" onChange={this.props.getLast} placeholder="lastname..."/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="lastname">Preferred contact information: </label>    
+                    <label htmlFor="lastname">Preferred contact information: </label>
                     <input className="form-control" onChange={this.props.getContact} placeholder="phone number or email..."/>
                 </div>
                 <div className="form-group">

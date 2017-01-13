@@ -8,34 +8,13 @@ import MainPage from './MainPage'
 @observer
 class BloodBankApp extends Component{
   render() {
+    const store = this.props.store
+    console.log{`store: ${store}`}
     return (
       <div className="container">
-      {!this.state.isUser && !this.state.showMainPage ?
-        <CreateUser
-            storeUserInfo={this.storeUserInfo}
-            getFirst={this.getFirst}
-            getLast={this.getLast}
-            getContact={this.getContact}
-            getType={this.getType}
-            getRh={this.getRh}
-            bloodType={this.state.bloodType}
-            rhFactor={this.state.rhFactor}
-            alreadyUser={this.alreadyUser}
-            />
-
-      : null}
-
-      {this.state.isUser && !this.state.showMainPage ?
-        <Login
-          createAccount={this.notUser}
-          login={this.login}
-      /> : null}
-
-      {this.state.showMainPage ?
-        <MainPage donor={this.props.donor}
-                  firstName={this.state.firstname}
-                  /> : null}
-
+      {/*<CreateUser/>
+        <Login/>*/}
+        <MainPage store={this.props.store}/>
       </div>
     );
   }

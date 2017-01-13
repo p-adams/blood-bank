@@ -1,20 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'
+import { observer } from 'mobx-react'
+import DevTools from 'mobx-react-devtools'
+import BloodBank from './BloodBankApp'
 import './App.css';
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      return (
+        <div>
+          <BloodBank store={this.props.store}></BloodBank>
+          <DevTools />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      )
   }
 }
 

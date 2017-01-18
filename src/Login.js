@@ -5,7 +5,7 @@ class Login extends Component{
     render(){
         return(
             <div className="container">
-                <form>
+                <form  onSubmit={this.login}>
                     <div className="form-group">
                         <label htmlFor="username">Username:</label>
                         <input type="text" className="form-control" placeholder="username..."/>
@@ -14,12 +14,15 @@ class Login extends Component{
                         <label htmlFor="password">Password: </label>
                         <input type="password" className="form-control" placeholder="password..."/>
                     </div>
-                    <button className="btn btn-primary">Login</button>
+                    <button type="submit"
+                            className="btn btn-primary"
+                           >Login</button>
                 </form>
             </div>
         )
     }
-    login(){
+    login = (e) => {
+        e.preventDefault()
         this.props.store.login()
     }
 }

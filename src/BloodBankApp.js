@@ -12,7 +12,7 @@ class BloodBankApp extends Component{
     return (
       <div className="container"> 
         {!this.props.store.loggedIn 
-          ? <Login/> 
+          ? <Login store={this.props.store}/> 
           : <MainPage store={this.props.store}/>} 
       </div>
     );

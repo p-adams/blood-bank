@@ -6,7 +6,6 @@ var CreateUser = React.createClass({
         return(
             <div className="container">
                 <form>
-                <span>Already a user? <a href="#">Login</a></span><br/>
                 <div className="form-group">
                     <label htmlFor="firstname">Firstname: </label>
                     <input className="form-control" placeholder="firstname..."/>

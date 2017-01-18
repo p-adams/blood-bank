@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {Component} from 'react'
+import {observer} from 'mobx'
 
-var Login = React.createClass({
-    render: function(){
+class Login extends Component{
+    render(){
         return(
             <div className="container">
                 <form>
-                 <span>Not a user? <a href="#" onClick={this.props.createAccount}>Create Account</a></span>
                     <div className="form-group">
                         <label htmlFor="username">Username:</label>
                         <input type="text" className="form-control" placeholder="username..."/>
@@ -14,11 +14,14 @@ var Login = React.createClass({
                         <label htmlFor="password">Password: </label>
                         <input type="password" className="form-control" placeholder="password..."/>
                     </div>
-                    <button className="btn btn-primary" onClick={this.props.login}>Login</button>
+                    <button className="btn btn-primary">Login</button>
                 </form>
             </div>
         )
     }
-})
+    login(){
+        this.props.store.login()
+    }
+}
 
 export default Login;

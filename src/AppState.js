@@ -2,7 +2,7 @@ import { observable } from 'mobx';
 
 class AppState {
   @observable timer = 0;
-  @observable name = "meow";
+  @observable loggedIn = false;
   @observable donors = [
         {firstname: "John", lastname: "Smith", contact: 7777777, type: 'O', rh: 'Positive'},
         {firstname: "Mary", lastname: "Smith", contact: 7777447, type: 'AB', rh: 'Negative'}
@@ -12,9 +12,7 @@ class AppState {
     lastname: '',
     contact: '',
     bloodType: 'A',
-    rhFactor: 'neg',
-    isUser: false,
-    showMainPage: false
+    rhFactor: 'neg'
   }
   getFirstName = name => userInfo.firstname = name
   getLastName = name => userInfo.lastname = name
@@ -23,8 +21,7 @@ class AppState {
   getRhFactor = rh => userInfo.rhFactor = rh
   createNewUser = () => console.log('create new user')
   login = () => {
-    userInfo.isUser = false
-    userInfo.showMainPage = true
+    this.loggedIn = true
   }
 //page loads, allow for user to click login if account exists.
   alreadyUser = () => userInfo.isUser = true

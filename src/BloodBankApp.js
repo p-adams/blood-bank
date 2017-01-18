@@ -9,12 +9,11 @@ import MainPage from './MainPage'
 class BloodBankApp extends Component{
   render() {
     const store = this.props.store
-    console.log(`store: ${store}`)
     return (
-      <div className="container">
-      {/*<CreateUser/>
-        <Login/>*/}
-        <MainPage store={this.props.store}/>
+      <div className="container"> 
+        {!this.props.store.loggedIn 
+          ? <Login/> 
+          : <MainPage store={this.props.store}/>} 
       </div>
     );
   }

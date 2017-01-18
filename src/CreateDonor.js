@@ -6,23 +6,23 @@ var CreateUser = React.createClass({
         return(
             <div className="container">
                 <form>
-                <span>Already a user? <a href="#" onClick={this.props.alreadyUser}>Login</a></span><br/>
+                <span>Already a user? <a href="#">Login</a></span><br/>
                 <div className="form-group">
                     <label htmlFor="firstname">Firstname: </label>
-                    <input className="form-control" onChange={this.props.getFirst} placeholder="firstname..."/>
+                    <input className="form-control" placeholder="firstname..."/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="lastname">Lastname: </label>
-                    <input className="form-control" onChange={this.props.getLast} placeholder="lastname..."/>
+                    <input className="form-control" placeholder="lastname..."/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="lastname">Preferred contact information: </label>
-                    <input className="form-control" onChange={this.props.getContact} placeholder="phone number or email..."/>
+                    <input className="form-control" placeholder="phone number or email..."/>
                 </div>
                 <div className="form-group">
                     <label>Blood Group</label>
                     {this.props.bloodType}
-                    <select className="form-control" onChange={this.props.getType}>
+                    <select className="form-control" >
                         <option>A</option>
                         <option>B</option>
                         <option>AB</option>
@@ -31,12 +31,12 @@ var CreateUser = React.createClass({
                 </div>
                 <label>RH factor: </label><br/>
                 <label className="radio-inline">
-                <input  type="radio" onChange={this.props.getRh} checked={this.props.rhFactor==='neg'} value="neg" name="optradio"/>Negative
+                <input  type="radio" value="neg" name="optradio"/>Negative
                 </label>
                 <label className="radio-inline">
-                <input type="radio" onChange={this.props.getRh} checked={this.props.rhFactor==='pos'} value="pos" name="optradio"/>Positive
+                <input type="radio" value="pos" name="optradio"/>Positive
                 </label>
-                <button id="storeUser" className="btn btn-default" onClick={this.props.storeUserInfo}>Create User</button>
+                <button id="storeUser">Create User</button>
                 </form>
             </div>
         )

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {observer} from 'mobx-react'
-import CreateUser from './CreateUser'
+import CreateDonor from './CreateDonor'
 import Login from './Login'
 import MainPage from './MainPage'
 

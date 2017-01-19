@@ -20,6 +20,8 @@ class AppState {
    
   login = () => this.loggedIn = true 
   toggleSearch = () => this.search = !this.search
+  toggleCreate = () => this.create = !this.create
+  toggleViewAll = () => this.viewAll = !this.viewAll
 
   /*
   getFirstName = name => userInfo.firstname = name

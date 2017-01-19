@@ -4,7 +4,6 @@ import React from 'react'
 var CreateUser = React.createClass({
     render: function(){
         return(
-            <div className="container">
                 <form>
                 <div className="form-group">
                     <label htmlFor="firstname">Firstname: </label>
@@ -37,7 +36,7 @@ var CreateUser = React.createClass({
                 </label>
                 <button id="storeUser">Create User</button>
                 </form>
-            </div>
+            
         )
     }
 })

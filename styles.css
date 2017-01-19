@@ -7,7 +7,7 @@
   padding: 25px;
   background: gray;
 }
-.donor-info{
+.donor-info {
   border: 1px solid red;
   font-size: 8px;
 }
@@ -15,15 +15,30 @@ a {
   font-size: 20px;
   text-decoration: none !important;
 }
-.search{
-  border: 1px solid green;
+.search {
+  /*box-shadow: 10px 10px 5px #888888;*/
+  background-color: white;
+  padding: 5px;
 }
 
-.create-donor{
-  border: 1px solid blue;
+.create-donor {
+  background-color: white;
+  padding: 5px;
 }
 
-table.borderless td,table.borderless th{
+table.borderless td,table.borderless th {
      border: none !important;
+}
+.a {
+  color: lightskyblue;
+  pointer-events: none;
+}
+.b {
+  color: lightskyblue;
+  pointer-events: none;
+}
+.c {
+  color: lightskyblue;
+  pointer-events: none;
 }
 

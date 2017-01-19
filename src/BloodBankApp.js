@@ -11,9 +11,11 @@ class BloodBankApp extends Component{
     const store = this.props.store
     return (
       <div className="container"> 
+        <div className="jumbotron">
         {!this.props.store.loggedIn 
           ? <Login store={this.props.store}/> 
           : <MainPage store={this.props.store}/>} 
+        </div>
       </div>
     );
   }

@@ -4,7 +4,7 @@ import {observer} from 'mobx'
 class Login extends Component{
     render(){
         return(
-            <div className="container">
+            <div>
                 <form  onSubmit={this.login}>
                     <div className="form-group">
                         <label htmlFor="username">Username:</label>

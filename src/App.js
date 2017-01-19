@@ -7,7 +7,10 @@ class App extends Component {
   render() {
       return (
         <div>
-          <BloodBank store={this.props.store}></BloodBank>
+          <h3>Blood Bank Manager</h3><hr/>
+           <div className="app">
+            <BloodBank store={this.props.store}></BloodBank>
+          </div>
           <DevTools />
         </div>
       )

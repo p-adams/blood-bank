@@ -6,11 +6,13 @@ class DonorInfo extends Component {
         return(
             <ul key={index}className="list-group">
                 <label>Donor {index += 1}</label>
-                <li className="list-group-item">{donor.firstname}</li>
-                <li className="list-group-item">{donor.lastname}</li>
-                <li className="list-group-item">{donor.contact}</li>
-                <li className="list-group-item">{donor.type}</li>
-                <li className="list-group-item">{donor.rh}</li>
+                <li className="list-group-item">Donor ID: <span className="dnr-info">{donor.id}</span></li>
+                <li className="list-group-item">Firstname: <span className="dnr-info">{donor.firstname}</span></li>
+                <li className="list-group-item">Lastname: <span className="dnr-info">{donor.lastname}</span></li>
+                <li className="list-group-item">Age: <span className="dnr-info">{donor.age}</span></li>
+                <li className="list-group-item">Contact: <span className="dnr-info">{donor.contact}</span></li>
+                <li className="list-group-item">Blood type: <span className="dnr-info">{donor.type}</span></li>
+                <li className="list-group-item">RH Factor: <span className="dnr-info">{donor.rh}</span></li>
             </ul>
         )
     })

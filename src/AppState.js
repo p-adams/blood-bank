@@ -7,8 +7,8 @@ class AppState {
   @observable create = false;
   @observable viewAll = false;
   @observable donors = [
-        {firstname: "John", lastname: "Smith", contact: 7777777, type: 'O', rh: 'Positive'},
-        {firstname: "Mary", lastname: "Smith", contact: 7777447, type: 'AB', rh: 'Negative'}
+        {id: 1, firstname: "John", lastname: "Smith", age: 43, contact: 7777777, type: 'O', rh: 'Positive'},
+        {id: 2, firstname: "Mary", lastname: "Smith", age: 25, contact: 7777447, type: 'AB', rh: 'Negative'}
   ]
   @observable userInfo = {
     firstname: '',

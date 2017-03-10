@@ -2,19 +2,14 @@ import React, {Component} from 'react'
 import {observer} from 'mobx'
 
 class Search extends Component {
-    handleSearchFilter(e){
-        const target = e.target.value
-        if (target==='bt'){
-            
-        }
-        
-    }
-    setPlaceholder(){
-        return this.props.store.filterByRH ? "enter rh factor" : "search"
-    }
+  
     render(){
-        const store = this.props.store
-        console.log(store)
+      
+        if(this.props.store.filterByRH && this.props.store.filterByBT) {
+            console.log('both checked')
+          
+        }
+      
         return(
              <form className="form-group">
                 <label htmlFor="filters">Search filters: </label>
@@ -28,7 +23,7 @@ class Search extends Component {
                             onChange={this.handleSearchFilter}
                             />
                     </div>
-                    filter by: {this.props.store.filterByRH}
+
                     <div className="filter-menu">
                         <label htmlFor="rh-factor">Rh factor</label>
                         <input
@@ -39,10 +34,22 @@ class Search extends Component {
                             />
                     </div>
                 </div>
-                <input type="text" className="form-control" placeholder="search..."/>
+               <input
+                    type="text"
+                    className="form-control"
+                    placeholder="search..."
+                    />
                 <button type="submit" className="btn btn-submit">Search</button>
             </form>
         )
+    }
+    handleSearchFilter = (e) => {
+        const target = e.target.value
+        if (target==='bt') 
+            this.props.store.searchByBT()
+        if (target==='rh') 
+            this.props.store.searchByRH()
+        
     }
 }
 

@@ -24,7 +24,7 @@ class Search extends Component {
                         <input
                             className="check"
                             type="checkbox"
-                            value={this.props.store.filterByBloodType}
+                            value="bt"
                             onChange={this.handleSearchFilter}
                             />
                     </div>
@@ -34,7 +34,7 @@ class Search extends Component {
                         <input
                             className="check"
                             type="checkbox"
-                            value={this.props.store.filterByRH}
+                            value="rh"
                             onChange={this.handleSearchFilter}
                             />
                     </div>

@@ -1,18 +1,23 @@
 import React, {Component} from 'react'
-import {observer} from 'mobx'
+import {observer} from 'mobx-react'
+import BloodTypeFilter from './BTFilterPanel'
+import RHFilter from './RHFilterPanel'
 
+@observer
 class Search extends Component {
   
     render(){
-      
-        if(this.props.store.filterByRH && this.props.store.filterByBT) {
-            console.log('both checked')
-          
-        }
-      
+        const rhFilt = this.props.store.filterByRH
+        const btFilt = this.props.store.filterByBT
+       const filterType =  rhFilt && btFilt ?  <div><BloodTypeFilter/><RHFilter/></div> :
+            rhFilt ? <RHFilter/> : btFilt ? <BloodTypeFilter/> : null
+       /*this.props.store.filterByRH ? <BloodTypeFilter/>
+            : this.props.store.filterByBT ? <RHFilter/> : null*/
+    
         return(
              <form className="form-group">
                 <label htmlFor="filters">Search filters: </label>
+                 {filterType}
                 <div className="filters-group">
                     <div className="filter-menu">
                         <label htmlFor="blood-type">Blood type</label>
@@ -23,7 +28,6 @@ class Search extends Component {
                             onChange={this.handleSearchFilter}
                             />
                     </div>
-
                     <div className="filter-menu">
                         <label htmlFor="rh-factor">Rh factor</label>
                         <input
@@ -34,6 +38,7 @@ class Search extends Component {
                             />
                     </div>
                 </div>
+               
                <input
                     type="text"
                     className="form-control"
@@ -49,7 +54,7 @@ class Search extends Component {
             this.props.store.searchByBT()
         if (target==='rh') 
             this.props.store.searchByRH()
-        
+        console.log(`meow: ${this.props.store.filterByRH}`)
     }
 }
 

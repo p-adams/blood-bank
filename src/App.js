@@ -3,6 +3,7 @@ import { observer } from 'mobx-react'
 import DevTools from 'mobx-react-devtools'
 import BloodBank from './BloodBankApp'
 
+@observer
 class App extends Component {
   render() {
       return (

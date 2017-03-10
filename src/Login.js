@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import {observer} from 'mobx'
+import {observer} from 'mobx-react'
 
+@observer
 class Login extends Component{
     render(){
         return(

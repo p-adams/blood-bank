@@ -4,6 +4,7 @@ import DonorInfo from './DonorInfo'
 import CreateDonor from './CreateDonor'
 import Search from './Search'
 import Menu from './Menu'
+
 @observer
 class MainPage extends Component {
     render(){

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {observer} from 'mobx'
+import {observer} from 'mobx-react'
 
 class Menu extends Component{
     render(){

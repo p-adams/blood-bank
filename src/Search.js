@@ -9,10 +9,11 @@ class Search extends Component {
     render(){
         const rhFilt = this.props.store.filterByRH
         const btFilt = this.props.store.filterByBT
-       const filterType =  rhFilt && btFilt ?  <div><BloodTypeFilter/><RHFilter/></div> :
-            rhFilt ? <RHFilter/> : btFilt ? <BloodTypeFilter/> : null
-       /*this.props.store.filterByRH ? <BloodTypeFilter/>
-            : this.props.store.filterByBT ? <RHFilter/> : null*/
+       const filterType = rhFilt && btFilt ?  <div><BloodTypeFilter/><RHFilter/></div> 
+                            : rhFilt ? <RHFilter/>
+                            : btFilt ? <BloodTypeFilter/>
+                            : null
+      
     
         return(
              <form className="form-group">

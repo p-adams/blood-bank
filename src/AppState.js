@@ -6,6 +6,8 @@ class AppState {
   @observable search = false;
   @observable create = false;
   @observable viewAll = false;
+  @observable filterByRH = false;
+  @observable filterByBloodType = false;
   @observable donors = [
         {id: 1, firstname: "John", lastname: "Smith", age: 43, contact: 7777777, type: 'O', rh: 'Positive'},
         {id: 2, firstname: "Mary", lastname: "Smith", age: 25, contact: 7777447, type: 'AB', rh: 'Negative'}
@@ -22,7 +24,8 @@ class AppState {
   toggleSearch = () => this.search = !this.search
   toggleCreate = () => this.create = !this.create
   toggleViewAll = () => this.viewAll = !this.viewAll
-
+  searchByRH = () => 
+  searchByBT = () =>
   /*
   getFirstName = name => userInfo.firstname = name
   getLastName = name => userInfo.lastname = name

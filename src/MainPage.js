@@ -13,7 +13,7 @@ class MainPage extends Component {
                 {this.props.store.search
                     ?
                     <div className="search">
-                        <Search/>
+                        <Search store={this.props.store}/>
                     </div>
                     : null }
                 {this.props.store.create

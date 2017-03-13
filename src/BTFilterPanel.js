@@ -3,7 +3,7 @@ import {observer} from 'mobx-react'
 class BTFilterPanel extends Component {
     render() {
         return (
-        <form>
+        <form className="filter-panel">
             <label className="radio-inline">
                 <input type="radio" name="opt1"/> A
             </label>

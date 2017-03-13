@@ -9,7 +9,7 @@ class Search extends Component {
     render(){
         const rhFilt = this.props.store.filterByRH
         const btFilt = this.props.store.filterByBT
-       const filterType = rhFilt && btFilt ?  <div><BloodTypeFilter/><RHFilter/></div> 
+        const filterType = rhFilt && btFilt ?  <div><BloodTypeFilter/><RHFilter/></div> 
                             : rhFilt ? <RHFilter/>
                             : btFilt ? <BloodTypeFilter/>
                             : null
@@ -17,7 +17,7 @@ class Search extends Component {
     
         return(
              <form className="form-group">
-                <label htmlFor="filters">Search filters: </label>
+                <label htmlFor="filters">Filter by: </label>
                  {filterType}
                 <div className="filters-group">
                     <div className="filter-menu">
@@ -45,7 +45,10 @@ class Search extends Component {
                     className="form-control"
                     placeholder="search..."
                     />
-                <button type="submit" className="btn btn-submit">Search</button>
+                <button
+                    type="submit"
+                    className="btn btn-submit"
+                    >Search</button>
             </form>
         )
     }

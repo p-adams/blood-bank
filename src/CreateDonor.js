@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 
-class CreateUser extends Component{
+class CreateDonor extends Component{
     render(){
         return(
                 <form>
@@ -19,7 +19,6 @@ class CreateUser extends Component{
                 </div>
                 <div className="form-group">
                     <label>Blood Group</label>
-                    {this.props.bloodType}
                     <select className="form-control" >
                         <option>A</option>
                         <option>B</option>
@@ -39,5 +38,6 @@ class CreateUser extends Component{
             
         )
     }
-})
-export default CreateUser;
+}
+
+export default CreateDonor;

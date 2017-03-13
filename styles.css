@@ -20,6 +20,12 @@ a {
   background-color: white;
   padding: 5px;
 }
+.filter-panel {
+  border: 1px solid darkgrey;
+  box-shadow: 10px 10px 5px #888888;
+  background-color: white;
+  padding: 5px;
+}
 
 .create-donor {
   background-color: white;

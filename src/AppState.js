@@ -1,4 +1,4 @@
-import { observable } from 'mobx';
+import {computed,observable} from 'mobx';
 
 class AppState {
   @observable timer = 0;
@@ -13,7 +13,7 @@ class AppState {
         {id: 1, firstname: "John", lastname: "Smith", age: 43, contact: 7777777, type: 'O', rh: 'Positive'},
         {id: 2, firstname: "Mary", lastname: "Smith", age: 25, contact: 7777447, type: 'AB', rh: 'Negative'}
   ]
-  @observable userInfo = {
+  @observable donorInfo = {
     firstname: '',
     lastname: '',
     contact: '',
@@ -27,17 +27,22 @@ class AppState {
   toggleViewAll = () => this.viewAll = !this.viewAll
   searchByRH = () => this.filterByRH = !this.filterByRH
   searchByBT = () => this.filterByBT = !this.filterByBT
-  getSearchValue = (val) => {
-    this.searchValue = val
+  getSearchValue = (val) => this.searchValue = val
+  get showFilteredResults () {
+    let self = this
+    return [1,2,3]
+    /*return this.donors.filter((donor) => {
+      return this.donor.firstname.indexOf(this.searchValue) > -1
+    })*/
   }
 }
 
 /*
-  getFirstName = name => userInfo.firstname = name
-  getLastName = name => userInfo.lastname = name
-  getContact = contact => userInfo.contact = contact
-  getBloodType = type => userInfo.bloodType = type
-  getRhFactor = rh => userInfo.rhFactor = rh
+  getFirstName = name => donorInfo.firstname = name
+  getLastName = name => donorInfo.lastname = name
+  getContact = contact => donorInfo.contact = contact
+  getBloodType = type => donorInfo.bloodType = type
+  getRhFactor = rh => donorInfo.rhFactor = rh
   createNewUser = () => console.log('create new user')*/
 
 export default AppState;

@@ -14,6 +14,9 @@ class Search extends Component {
                             : rhFilt ? <RHFilter/>
                             : btFilt ? <BloodTypeFilter/>
                             : null
+       const results = store.showFilteredResults.map(result => {
+           console.log(result)
+       })
         return(
             <div>
              <form className="form-group">
@@ -49,7 +52,7 @@ class Search extends Component {
                     />
             </form>
             <div>
-                {store.searchValue}
+                {store.showFilteredResults}
             </div>
         </div>
         )

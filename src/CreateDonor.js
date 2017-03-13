@@ -28,12 +28,12 @@ class CreateDonor extends Component{
                 </div>
                 <label>RH factor: </label><br/>
                 <label className="radio-inline">
-                <input  type="radio" value="neg" name="optradio"/>Negative
+                    <input  type="radio" value="neg" name="optradio"/>Negative
                 </label>
                 <label className="radio-inline">
-                <input type="radio" value="pos" name="optradio"/>Positive
+                    <input type="radio" value="pos" name="optradio"/>Positive
                 </label>
-                <button id="storeUser">Create User</button>
+                <button id="storeDonor">Create Donor</button>
                 </form>
             
         )

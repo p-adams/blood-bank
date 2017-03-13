@@ -28,17 +28,16 @@ class AppState {
   searchByRH = () => this.filterByRH = !this.filterByRH
   searchByBT = () => this.filterByBT = !this.filterByBT
   getSearchValue = (val) => {
-    console.log(`getSearchValue ${val}`)
     this.searchValue = val
   }
-  /*
+}
+
+/*
   getFirstName = name => userInfo.firstname = name
   getLastName = name => userInfo.lastname = name
   getContact = contact => userInfo.contact = contact
   getBloodType = type => userInfo.bloodType = type
   getRhFactor = rh => userInfo.rhFactor = rh
   createNewUser = () => console.log('create new user')*/
- 
-}
 
 export default AppState;

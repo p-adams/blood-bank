@@ -14,8 +14,6 @@ class Search extends Component {
                             : rhFilt ? <RHFilter/>
                             : btFilt ? <BloodTypeFilter/>
                             : null
-      
-    
         return(
             <div>
              <form className="form-group">

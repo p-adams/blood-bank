@@ -4,14 +4,10 @@ import {observer} from 'mobx-react'
 class RHFilterPanel extends Component {
     render() {
         return (
-        <form className="filter-panel">
-            <label className="radio-inline">
-                <input type="radio" name="opt5"/> Negative
-            </label>
-            <label className="radio-inline">
-                <input type="radio" name="opt6"/> Positive
-            </label>
-        </form>
+        <div className="filter-panel">
+            <input type="radio" name="opt5"/> Negative
+            <input type="radio" name="opt6"/> Positive
+        </div>
         )
     }
 }

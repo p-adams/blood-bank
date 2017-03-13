@@ -8,6 +8,7 @@ class AppState {
   @observable viewAll = false;
   @observable filterByRH = false;
   @observable filterByBT = false;
+  @observable searchValue = "";
   @observable donors = [
         {id: 1, firstname: "John", lastname: "Smith", age: 43, contact: 7777777, type: 'O', rh: 'Positive'},
         {id: 2, firstname: "Mary", lastname: "Smith", age: 25, contact: 7777447, type: 'AB', rh: 'Negative'}
@@ -24,13 +25,11 @@ class AppState {
   toggleSearch = () => this.search = !this.search
   toggleCreate = () => this.create = !this.create
   toggleViewAll = () => this.viewAll = !this.viewAll
-  searchByRH = () => {
-     this.filterByRH = !this.filterByRH
-      console.log(`RH: ${this.filterByRH}`)
-  }
-  searchByBT = () => {
-    this.filterByBT = !this.filterByBT
-    console.log(`BT: ${this.filterByBT}`)
+  searchByRH = () => this.filterByRH = !this.filterByRH
+  searchByBT = () => this.filterByBT = !this.filterByBT
+  getSearchValue = (val) => {
+    console.log(`getSearchValue ${val}`)
+    this.searchValue = val
   }
   /*
   getFirstName = name => userInfo.firstname = name

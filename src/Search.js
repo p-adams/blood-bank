@@ -7,8 +7,9 @@ import RHFilter from './RHFilterPanel'
 class Search extends Component {
   
     render(){
-        const rhFilt = this.props.store.filterByRH
-        const btFilt = this.props.store.filterByBT
+        const store = this.props.store
+        const rhFilt = store.filterByRH
+        const btFilt = store.filterByBT
         const filterType = rhFilt && btFilt ?  <div><BloodTypeFilter/><RHFilter/></div> 
                             : rhFilt ? <RHFilter/>
                             : btFilt ? <BloodTypeFilter/>
@@ -16,6 +17,7 @@ class Search extends Component {
       
     
         return(
+            <div>
              <form className="form-group">
                 <label htmlFor="filters">Filter by: </label>
                  {filterType}
@@ -44,12 +46,14 @@ class Search extends Component {
                     type="text"
                     className="form-control"
                     placeholder="search..."
+                    value={store.searchValue}
+                    onChange={this.getSearch}
                     />
-                <button
-                    type="submit"
-                    className="btn btn-submit"
-                    >Search</button>
             </form>
+            <div>
+                {store.searchValue}
+            </div>
+        </div>
         )
     }
     handleSearchFilter = (e) => {
@@ -58,7 +62,9 @@ class Search extends Component {
             this.props.store.searchByBT()
         if (target==='rh') 
             this.props.store.searchByRH()
-        console.log(`meow: ${this.props.store.filterByRH}`)
+    }
+    getSearch = (e) => {
+        this.props.store.getSearchValue(e.target.value)
     }
 }
 

@@ -28,7 +28,7 @@ class AppState {
   searchByRH = () => this.filterByRH = !this.filterByRH
   searchByBT = () => this.filterByBT = !this.filterByBT
   getSearchValue = (val) => this.searchValue = val
-  showFilteredResults () {
+  @computed get showFilteredResults () {
     return this.donors.filter(donor => {
       return donor.firstname.indexOf(this.searchValue) > -1
     })

@@ -14,8 +14,15 @@ class Search extends Component {
                             : rhFilt ? <RHFilter/>
                             : btFilt ? <BloodTypeFilter/>
                             : null
-       const results = store.showFilteredResults.map( result => {
-           console.log(result)
+       const results = store.showFilteredResults.map( (result,index) => {
+           return(
+               <tbody key={index}>
+                    <tr className="searchData">
+                        <td>{result.firstname}</td>
+                        <td>{result.lastname}</td>
+                    </tr>
+               </tbody>
+           )
        })
         return(
             <div>
@@ -51,9 +58,9 @@ class Search extends Component {
                     onChange={this.getSearch}
                     />
             </form>
-            <div>
-                {store.showFilteredResults}
-            </div>
+            <table className="table">
+                {results}
+            </table>
         </div>
         )
     }

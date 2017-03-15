@@ -21,10 +21,11 @@ a {
   padding: 5px;
 }
 .filter-panel {
+  margin-bottom: 10px;
   border: 1px solid darkgrey;
   box-shadow: 10px 10px 5px #888888;
   background-color: white;
-  padding: 5px;
+  padding: 10px;
 }
 
 .create-donor {

@@ -14,7 +14,7 @@ class Search extends Component {
                             : rhFilt ? <RHFilter/>
                             : btFilt ? <BloodTypeFilter/>
                             : null
-       const results = store.showFilteredResults.map(result => {
+       const results = store.showFilteredResults.map( result => {
            console.log(result)
        })
         return(

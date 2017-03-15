@@ -5,8 +5,8 @@ class RHFilterPanel extends Component {
     render() {
         return (
         <div className="filter-panel">
-            <input type="radio" name="opt5"/> Negative
-            <input type="radio" name="opt6"/> Positive
+            <input type="radio" value="neg" name="opt"/><label for="neg"> Negative</label>
+            <input type="radio" value="pos" name="opt"/><label for="neg"> Positive</label>
         </div>
         )
     }

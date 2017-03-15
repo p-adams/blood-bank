@@ -28,12 +28,10 @@ class AppState {
   searchByRH = () => this.filterByRH = !this.filterByRH
   searchByBT = () => this.filterByBT = !this.filterByBT
   getSearchValue = (val) => this.searchValue = val
-  get showFilteredResults () {
-    let self = this
-    return [1,2,3]
-    /*return this.donors.filter((donor) => {
-      return this.donor.firstname.indexOf(this.searchValue) > -1
-    })*/
+  showFilteredResults () {
+    return this.donors.filter(donor => {
+      return donor.firstname.indexOf(this.searchValue) > -1
+    })
   }
 }
 

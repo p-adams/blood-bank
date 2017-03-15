@@ -17,6 +17,7 @@ class AppState {
     firstname: '',
     lastname: '',
     contact: '',
+    age: 0,
     bloodType: 'A',
     rhFactor: 'neg'
   }

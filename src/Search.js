@@ -1,25 +1,23 @@
 import React, {Component} from 'react'
 import {observer} from 'mobx-react'
-import BloodTypeFilter from './BTFilterPanel'
-import RHFilter from './RHFilterPanel'
+
 
 @observer
 class Search extends Component {
   
     render(){
         const store = this.props.store
-        const rhFilt = store.filterByRH
-        const btFilt = store.filterByBT
-        const filterType = rhFilt && btFilt ?  <div><BloodTypeFilter/><RHFilter/></div> 
-                            : rhFilt ? <RHFilter/>
-                            : btFilt ? <BloodTypeFilter/>
-                            : null
-       const results = store.showFilteredResults.map( (result,index) => {
+        const results = store.showFilteredResults.map( (result,index) => {
            return(
                <tbody key={index}>
                     <tr className="searchData">
-                        <td>{result.firstname}</td>
+                        <td>{result.id}</td>
                         <td>{result.lastname}</td>
+                        <td>{result.firstname}</td>
+                        <td>{result.contact}</td>
+                        <td>{result.age}</td>
+                        <td>{result.type}</td>
+                        <td>{result.rh}</td>
                     </tr>
                </tbody>
            )
@@ -27,30 +25,8 @@ class Search extends Component {
         return(
             <div>
              <form className="form-group">
-                <label htmlFor="filters">Filter by: </label>
-                 {filterType}
-                <div className="filters-group">
-                    <div className="filter-menu">
-                        <label htmlFor="blood-type">Blood type</label>
-                        <input
-                            className="check"
-                            type="checkbox"
-                            value="bt"
-                            onChange={this.handleSearchFilter}
-                            />
-                    </div>
-                    <div className="filter-menu">
-                        <label htmlFor="rh-factor">Rh factor</label>
-                        <input
-                            className="check"
-                            type="checkbox"
-                            value="rh"
-                            onChange={this.handleSearchFilter}
-                            />
-                    </div>
-                </div>
-               
-               <input
+                <label htmlFor="search">Search donor by name</label>
+                <input
                     type="text"
                     className="form-control"
                     placeholder="search..."
@@ -59,6 +35,17 @@ class Search extends Component {
                     />
             </form>
             <table className="table">
+                <thead>
+                    <tr>
+                        <th>Donor ID</th>
+                        <th>Lastname</th>
+                        <th>Firstname</th>
+                        <th>Contact</th>
+                        <th>Age</th>
+                        <th>Blood type</th>
+                        <th>RH Factor</th>
+                    </tr>
+                </thead>
                 {results}
             </table>
         </div>

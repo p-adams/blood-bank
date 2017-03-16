@@ -14,12 +14,13 @@ class AppState {
         {id: 2, firstname: "Mary", lastname: "Smith", age: 25, contact: 7777447, type: 'AB', rh: 'Negative'}
   ]
   @observable donorInfo = {
+    id: 2,
     firstname: '',
     lastname: '',
     contact: '',
     age: 0,
-    bloodType: 'A',
-    rhFactor: 'neg'
+    type: 'A',
+    rh: 'neg'
   }
    
   login = () => this.loggedIn = true 
@@ -34,14 +35,20 @@ class AppState {
       return donor.firstname.indexOf(this.searchValue) > -1
     })
   }
+  setFirstname = name => this.donorInfo.firstname = name
+  setLastname = name => this.donorInfo.lastname = name
+  setContact = contact => this.donorInfo.contact = contact
+  setAge = age => this.donorInfo.age = age
+  setBloodType = type =>
+    this.donorInfo.type = type
+  setRHFactor = rh => this.donorInfo.rh = rh
+  createNewDonor = () => {
+    alert('create new user')
+    this.donorInfo.id += 1
+    this.donors.push(this.donorInfo)
+  }
+
 }
 
-/*
-  getFirstName = name => donorInfo.firstname = name
-  getLastName = name => donorInfo.lastname = name
-  getContact = contact => donorInfo.contact = contact
-  getBloodType = type => donorInfo.bloodType = type
-  getRhFactor = rh => donorInfo.rhFactor = rh
-  createNewUser = () => console.log('create new user')*/
 
 export default AppState;

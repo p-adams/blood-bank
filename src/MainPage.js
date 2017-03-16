@@ -20,7 +20,7 @@ class MainPage extends Component {
                 {this.props.store.create
                     ?
                     <div className="create-donor">
-                        <CreateDonor/>
+                        <CreateDonor store={this.props.store}/>
                     </div>
                 : null }
                 {this.props.store.viewAll
